@@ -3,10 +3,17 @@
   "version": "1.0.0",
   "description": "MRP NodeJS Coding Challenge",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "data": "node ./bin/generate-data.js",
     "start": "node ./src/index.js"
   },
   "author": "Cody Mercer <cmercer@mrpfd.com>",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  }
 }
