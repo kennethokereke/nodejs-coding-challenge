@@ -9,9 +9,8 @@ var router = express_1.default.Router();
 //viewing all the users 
 router.get('/', function (req, res) {
     console.log(users);
-    //adding pagination
-    var page = req.query.page;
-    var limit = req.query.limit;
+    //adding pagination http://localhost:5000/users?page=1&limit=5
+    var _a = req.query, page = _a.page, limit = _a.limit;
     var startIndex = (page - 1) * limit;
     var endIndex = page * limit;
     var resultUsers = users.slice(startIndex, endIndex);
