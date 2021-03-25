@@ -4,21 +4,35 @@ let users: any[] = require('../data/users.json')
 
 const router: Router = express.Router();
 
-
-//viewing all the users 
+//shows all users
 router.get('/', (req: any, res: any) => {
     console.log(users)
-     //adding pagination http://localhost:5000/users?page=1&limit=5
-    const {page, limit} = req.query
+    
+    res.send(users)
    
-
-    const startIndex = (page - 1) * limit
-    const endIndex = page * limit
-    const resultUsers = users.slice(startIndex, endIndex)
-
-    res.send(resultUsers)
 }
 )
+
+
+//Pagination 
+// router.get(`/`, (req: any, res: any) => {
+//     console.log(users)
+//      //adding pagination http://localhost:5000/users?page=1&limit=5
+//     const {page, limit} = req.query
+   
+
+//     const startIndex: number = (page - 1) * limit
+//     const endIndex : number  = page * limit
+    
+//      const resultUsers = users.slice(startIndex, endIndex)
+   
+    
+//     res.send(resultUsers)
+   
+// }
+// )
+
+
 
 //create a user 
 router.post('/', (req: any, res:any) => {
@@ -38,7 +52,7 @@ router.delete('/:name',  (req: any, res:any) => {
 
 
 //updating an existing user using Dateofbirth as the dependant
-// since it can never changes
+// since your dataOfBirth never changes :)
 router.patch('/:dateOfBirth',(req:any, res:any) => {
     const user = users.find((user) => user.dateOfBirth === req.params.dateOfBirth)
     user.name = req.body.name;

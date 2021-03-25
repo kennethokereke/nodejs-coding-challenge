@@ -28,7 +28,7 @@ router.delete('/:name', function (req, res) {
     res.send(name + " is deleted from the database :(");
 });
 //updating an existing user using Dateofbirth as the dependant
-// since it can never changes
+// since your dataOfBirth never changes :)
 router.patch('/:dateOfBirth', function (req, res) {
     var user = users.find(function (user) { return user.dateOfBirth === req.params.dateOfBirth; });
     user.name = req.body.name;
