@@ -13,7 +13,7 @@ The goal of this challenge is to develop a restful HTTP API using NodeJS. Within
 ## Requirements
 
 - Create a HTTP endpoint to view all of the users. ✅
-- Create a HTTP endpoint to create a new user.
+- Create a HTTP endpoint to create a new user.  ✅
 - Create a HTTP endpoint to update an existing user.
 - Create a HTTP endpoint to delete an existing user.
 

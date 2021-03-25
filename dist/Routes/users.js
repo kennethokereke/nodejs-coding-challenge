@@ -11,4 +11,10 @@ router.get('/', function (req, res) {
     console.log(users);
     res.send(users);
 });
+//create a user 
+router.post('/', function (req, res) {
+    var user = req.body;
+    users.push(user);
+    res.send("User with the name " + user.name + " was added to the database ");
+});
 exports.default = router;
