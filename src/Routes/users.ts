@@ -1,28 +1,52 @@
-import { Switch } from '@material-ui/core';
-import express, { Router, Request, Response } from 'express';
-import {createUser, deleteUser, FindAllUser, updatedUser} from '../Controllers/users'
-
-
+import express, { Router } from 'express';
+let users: any[] = require('../data/users.json')
 
 
 const router: Router = express.Router();
 
 
 //viewing all the users 
-router.get('/', FindAllUser)
+router.get('/', (req: any, res: any) => {
+    console.log(users)
+
+    res.send(users)
+}
+)
 
 //create a user 
-router.post('/', createUser )
+router.post('/', (req: any, res:any) => {
+    
+    users.push(req.body)
+    res.send(`User with the name [${req.body.name}] was added to the database `)
 
+})
 
 
 //deleting users 
-router.delete('/:name', deleteUser)
+router.delete('/:name',  (req: any, res:any) => {
+    const {name } = req.params
+    users = users.filter((user) => user.name !== name)
+    res.send(`${name} is deleted from the database :(`)
+})
 
 
 //updating an existing user using Dateofbirth as
 // the dependant since it can never changes
-router.patch('/:dateOfBirth',updatedUser)
+router.patch('/:dateOfBirth',(req:any, res:any) => {
+    const user = users.find((user) => user.dateOfBirth === req.params.dateOfBirth)
+    user.name = req.body.name;
+    user.email = req.body.email;
+    user.dateOfBirth = req.body.dateOfBirth;
+    user.phoneNumber = req.body.phoneNumber;
+    user.street = req.body.address.street;
+     user.city = req.body.address.city;
+    user.state = req.body.address.state;
+    user.country = req.body.address.country
+    user.zipCode = req.body.address.zipCode;
+
+    res.send(`${req.body.name} updated their profile`)
+
+})
 
 
 
