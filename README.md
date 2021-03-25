@@ -1,14 +1,10 @@
 # MRP NodeJS Coding Challenge
 
-Thank you for your interest in MRP. This challenge is intended to help us better understand your approach to solving problems using the NodeJS runtime. We are excited about your candidacy, and we are looking forward to reviewing your submission.
+Thank you for giving me the opportunity to build an API in NodeJS for MRP.😀
 
-## Dependencies
+I have finished all the requirements as well as a few bonus objectives. I hope you enjoy 🎉🎉🎉🎉
 
-The only dependency for this challenge is NodeJS. Aside from your editor of choice, you should not need any additional software to complete this challenge.
 
-## Overview
-
-The goal of this challenge is to develop a restful HTTP API using NodeJS. Within the `data` directory you will find the file `users.json`. Please use that file as a data source to develop a restful HTTP API for performing CRUD operations upon that data.
 
 ## Requirements
 
