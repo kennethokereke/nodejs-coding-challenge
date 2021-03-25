@@ -14,7 +14,7 @@ router.get('/', (req: any, res: any) => {
 )
 
 
-//Pagination 
+//BONUS: Pagination 
 // router.get(`/`, (req: any, res: any) => {
 //     console.log(users)
 //      //adding pagination http://localhost:5000/users?page=1&limit=5
