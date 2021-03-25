@@ -16,7 +16,7 @@ app.use('/users', usersRoutes)
 app.get('/' , (req: Request, res: Response) => {
     console.log('[test]')
 
-    res.send('Hello from homepage')
+    res.send('Whassup MRP!')
 })
 
 //listening to incoming events

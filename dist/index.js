@@ -16,7 +16,7 @@ app.use('/users', users_1.default);
 //Get Request
 app.get('/', function (req, res) {
     console.log('[test]');
-    res.send('Hello from homepage');
+    res.send('Whassup MRP!');
 });
 //listening to incoming events
 app.listen(PORT, function () { return console.log("Server running on PORT: http://localhost:" + PORT); });
