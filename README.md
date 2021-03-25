@@ -23,7 +23,7 @@ The goal of this challenge is to develop a restful HTTP API using NodeJS. Within
 - Add automated tests
 - Add request validation
 - Add support for query parameters, such as:
-  - pagination: `?page=2&limit=5`
+  - pagination: `?page=2&limit=5` ✅
   - sorting: `?sortBy=email&sortDirection=ascending`
   - matching: `?match[email]=jdoe@example.com`
 

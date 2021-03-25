@@ -8,8 +8,15 @@ const router: Router = express.Router();
 //viewing all the users 
 router.get('/', (req: any, res: any) => {
     console.log(users)
+    //adding pagination
+    const page = req.query.page
+    const limit = req.query.limit
 
-    res.send(users)
+    const startIndex = (page - 1) * limit
+    const endIndex = page * limit
+    const resultUsers = users.slice(startIndex, endIndex)
+
+    res.send(resultUsers)
 }
 )
 
@@ -30,8 +37,8 @@ router.delete('/:name',  (req: any, res:any) => {
 })
 
 
-//updating an existing user using Dateofbirth as
-// the dependant since it can never changes
+//updating an existing user using Dateofbirth as the dependant
+// since it can never changes
 router.patch('/:dateOfBirth',(req:any, res:any) => {
     const user = users.find((user) => user.dateOfBirth === req.params.dateOfBirth)
     user.name = req.body.name;

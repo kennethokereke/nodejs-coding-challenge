@@ -9,7 +9,13 @@ var router = express_1.default.Router();
 //viewing all the users 
 router.get('/', function (req, res) {
     console.log(users);
-    res.send(users);
+    //adding pagination
+    var page = req.query.page;
+    var limit = req.query.limit;
+    var startIndex = (page - 1) * limit;
+    var endIndex = page * limit;
+    var resultUsers = users.slice(startIndex, endIndex);
+    res.send(resultUsers);
 });
 //create a user 
 router.post('/', function (req, res) {
@@ -22,8 +28,8 @@ router.delete('/:name', function (req, res) {
     users = users.filter(function (user) { return user.name !== name; });
     res.send(name + " is deleted from the database :(");
 });
-//updating an existing user using Dateofbirth as
-// the dependant since it can never changes
+//updating an existing user using Dateofbirth as the dependant
+// since it can never changes
 router.patch('/:dateOfBirth', function (req, res) {
     var user = users.find(function (user) { return user.dateOfBirth === req.params.dateOfBirth; });
     user.name = req.body.name;
