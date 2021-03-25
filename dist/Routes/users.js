@@ -17,4 +17,11 @@ router.post('/', function (req, res) {
     users.push(user);
     res.send("User with the name " + user.name + " was added to the database ");
 });
+//update exisitng user by their full name
+router.delete('/:name', function (req, res) {
+    var name = req.params.name;
+    users = users.filter(function (user) { return user.name !== name; });
+    res.send(name + " is deleted from the database :(");
+});
+//updating an existing user
 exports.default = router;
