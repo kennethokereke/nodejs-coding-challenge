@@ -10,6 +10,7 @@ I have finished all the requirements as well as a few bonus objectives. I hope y
 - to create new user is POST http://localhost:5000/users
 - to update an excisting user is PATCH http://localhost:5000/users/dateOfBirth, then enter new details
 - to delete an existing user is DELETE http://localhost:5000/users/name
+- Access the bonus question uncomment the code to access GET  http://localhost:5000/users?page=1&limit=5
 
 
 ## Requirements
