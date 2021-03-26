@@ -4,6 +4,12 @@ Thank you for giving me the opportunity to build an API in NodeJS for MRP.😀
 
 I have finished all the requirements as well as a few bonus objectives. I hope you enjoy 🎉🎉🎉🎉
 
+## Instructions:
+
+- On Postman to view all users GET http://localhost:5000/users
+- to create new user is POST http://localhost:5000/users
+- to update an excisting user is PATCH http://localhost:5000/users/dateOfBirth, then enter new details
+- to delete an existing user is DELETE http://localhost:5000/users/name
 
 
 ## Requirements
